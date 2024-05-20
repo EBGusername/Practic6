@@ -1,0 +1,141 @@
+﻿<Window x:Class="practic6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practic6"
+        xmlns:views="clr-namespace:practic6.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="369" Width="351">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="back" Content="Back" HorizontalAlignment="Center" Background="OrangeRed" Grid.Row="0" Grid.Column="0" Width="50">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="Background.Color" To="Red" AutoReverse="True" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button x:Name="naxt" Content="Naxt" HorizontalAlignment="Center" Background="OrangeRed" Grid.Row="0" Grid.Column="6" Width="50">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Width" From="45" To="152" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <TextBlock Text="Месяц Апрель" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Grid.ColumnSpan="7"/>
+        <TextBlock Grid.Row="1" Text="Пн" HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="16"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Вт" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Ср" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Чт" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="4" Text="Пт" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="5" Text="Сб" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="6" Text="Вс" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <views:card Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50">
+            <views:card.ContextMenu>
+                <ContextMenu Background="OrangeRed">
+                    <MenuItem Header="Элемент 1">
+                        <MenuItem.Icon>
+                            <Image Source="/Model1/image.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Элемент 2">
+                        <MenuItem.Icon>
+                            <Image Source="/Model1/image.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Элемент 3">
+                        <MenuItem.Icon>
+                            <Image Source="/Model1/image.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Элемент 1 в эелементе 3" Background="OrangeRed">
+                            <MenuItem.Icon>
+                                <Image Source="/Model1/image.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Элемент 4">
+                        <MenuItem.Icon>
+                            <Image Source="/Model1/image.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Элемент 5">
+                        <MenuItem.Icon>
+                            <Image Source="/Model1/image.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </views:card.ContextMenu>
+        </views:card>
+        <views:card Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50">
+            <views:card.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Height" From="20" To="40" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </views:card.Triggers>
+        </views:card>
+        <views:card Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="5" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="6" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="4" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="5" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="6" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="4" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="5" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="6" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="6" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="0" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+        <views:card Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="50"/>
+    </Grid>
+</Window>
